@@ -1,8 +1,30 @@
 {
-  "name": "word-game",
+  "name": "fun-words-game",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "高考趣味背单词游戏 - 魂斗罗像素风格",
   "type": "module",
+  "homepage": "https://fun-words-game.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/fun-words-game"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "game",
+    "education",
+    "words",
+    "pixel",
+    "retro"
+  ],
+  "author": "FunWords Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #0a0a0a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 3px
+    );
+}
+
+@keyframes pixelFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes screenShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes pixelGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(44, 232, 162, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(44, 232, 162, 0.8);
+  }
+}
+
+.pixel-button {
+  @apply border-2 border-white bg-black text-white px-6 py-3 text-sm font-bold
+         hover:bg-primary hover:border-primary transition-all duration-200
+         active:translate-x-1 active:translate-y-1;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+
+.pixel-button:active {
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.pixel-card {
+  @apply border-2 border-white bg-black p-6;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+
+.pixel-input {
+  @apply border-2 border-white bg-black text-white px-4 py-2 text-sm
+         focus:outline-none focus:border-primary;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.life-heart {
+  @apply text-red-500 text-xl;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+}
+
+.combo-text {
+  @apply text-primary text-lg;
+  animation: pixelGlow 1s ease-in-out infinite;
+}
+
+.correct-flash {
+  animation: pixelFlash 0.3s ease-in-out;
+}
+
+.wrong-shake {
+  animation: screenShake 0.3s ease-in-out;
+}
